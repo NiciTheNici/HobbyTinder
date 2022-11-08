@@ -1,6 +1,6 @@
 # HobbyTinder
-## Frontend
-Run frontend from the frontend directory:
+## Angular Frontend
+Run angular project from the `frontend/` directory:
 
 ```
 npm run start
