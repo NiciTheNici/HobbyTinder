@@ -2,12 +2,7 @@
 
 body {
   background-color: var(--ctp-mocha-base);
-}
-
-p {
-  color: var(--ctp-mocha-text);
-}
-
+  color: var(--ctp-mocha-text); }
 
 :root {
 	--ctp-latte-rosewater: #de9584;
