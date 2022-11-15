@@ -2,9 +2,6 @@
 
 body {
   background-color: var(--ctp-mocha-base);
-}
-
-p {
   color: var(--ctp-mocha-text);
 }
 
