@@ -4,7 +4,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
@@ -13,10 +12,7 @@ public class UserLoginController {
 
         @PostMapping("/login")
         public String login(@RequestParam(value="email") String email, @RequestParam(value="password") String password, HttpServletResponse response) {
-            Cookie cookie = new Cookie("Test","Test");
-            cookie.setMaxAge(7 * 24 * 60 * 60); // expires in 7 days
-            System.out.println(email);
-            System.out.println(password);
+            Cookie cookie = new Cookie("LoggedIn","true");
             response.addCookie(cookie);
             return "Logged in with email: " + email + " and password: " + password;
         }
