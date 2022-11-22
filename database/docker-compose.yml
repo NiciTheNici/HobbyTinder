@@ -11,4 +11,4 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: user
     ports:
-      - 3306:3306
+      - 12000:3306
