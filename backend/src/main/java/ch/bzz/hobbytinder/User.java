@@ -1,5 +1,4 @@
-package ch.bzz.hobbytinder.model;
-
+package ch.bzz.hobbytinder;
 import java.util.Date;
 
 public class User {
@@ -56,8 +55,8 @@ public class User {
         this.email = email;
         this.password = password;
     }
-    
-    public User(){
+
+    public User() {
 
     }
 }
