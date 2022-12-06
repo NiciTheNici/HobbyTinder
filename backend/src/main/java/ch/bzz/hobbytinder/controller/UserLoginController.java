@@ -1,10 +1,12 @@
 package ch.bzz.hobbytinder.controller;
 
+import ch.bzz.hobbytinder.util.SHA256;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
 import java.util.Map;
 
 @RestController
@@ -14,7 +16,7 @@ public class UserLoginController {
         public String login(@RequestParam(value="email") String email, @RequestParam(value="password") String password, HttpServletResponse response) {
             Cookie cookie = new Cookie("LoggedIn","true");
             response.addCookie(cookie);
-            return "Logged in with email: " + email + " and password: " + password;
+            return "Logged in with email: " + email + " and password: " + SHA256.getHexString(SHA256.getSHA(password));
         }
 
     @PutMapping("/register")
