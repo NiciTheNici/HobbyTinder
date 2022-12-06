@@ -56,14 +56,14 @@
                         <td>:</td>
                         <td>
                           <mat-chip-list #chipList>
-                            <mat-chip style="background-color:#e64553"*ngFor="let fruit of fruits" [selectable]="selectable"
-                                      [removable]="removable" (removed)="remove(fruit)">
-                              {{fruit.name}}
-                              <mat-icon matChipRemove *ngIf="removable">X</mat-icon>
+                            <mat-chip disableRipple matRipple matRippleRadius="10"style="background-color:lightgreen"*ngFor="let hobby of hobbys" [selectable]="selectable"
+                                      [removable]="removable" (removed)="remove(hobby)">
+                              {{hobby.name}}
+                              <mat-icon style="align-items: center; position: center" matChipRemove *ngIf="removable">cancel</mat-icon>
                             </mat-chip>
 
                           </mat-chip-list>
-
+                          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
                         </td>
@@ -95,9 +95,13 @@
                     <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Other Information</h3>
                   </div>
                   <div class="card-body pt-0">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+
+
+                    <p class ="set1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                       nisi ut aliquip ex ea commodo consequat.</p>
+                    <input type="text"  placeholder="Lorem ipsum dolor sit amet"  class="editable">
+
                   </div>
                 </div>
               </div>

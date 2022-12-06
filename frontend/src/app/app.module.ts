@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,15 +16,16 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     LoginComponent,
     ProfileComponent
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    MatChipsModule,
-    MatIconModule,
-    MatFormFieldModule
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        MatChipsModule,
+        MatIconModule,
+        MatFormFieldModule,
+        FormsModule
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

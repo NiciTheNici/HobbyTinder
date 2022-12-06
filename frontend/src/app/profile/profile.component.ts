@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from "@angular/material/chips";
-export interface Fruit {
+export interface Hobby {
   name: string;
 }
 @Component({
@@ -18,19 +18,19 @@ export class ProfileComponent {
   addOnBlur = true;
 
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  fruits: Fruit[] = [
-    {name: 'Lemon'},
-    {name: 'Lime'},
-    {name: 'Apple'},
+  hobbys: Hobby[] = [
+    {name: 'Climbing'},
+    {name: 'Dancing'},
+    {name: 'Football'},
   ];
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
 
-    // Add our fruit
+    // Add our hobby
     if ((value || '').trim()) {
-      this.fruits.push({name: value.trim()});
+      this.hobbys.push({name: value.trim()});
     }
 
     // Reset the input value
@@ -39,11 +39,11 @@ export class ProfileComponent {
     }
   }
 
-  remove(fruit: Fruit): void {
-    const index = this.fruits.indexOf(fruit);
+  remove(hobby: Hobby): void {
+    const index = this.hobbys.indexOf(hobby);
 
     if (index >= 0) {
-      this.fruits.splice(index, 1);
+      this.hobbys.splice(index, 1);
     }
   }
 }
