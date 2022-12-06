@@ -70,4 +70,16 @@ public class User {
     public User(){
 
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userUUID=" + userUUID +
+                ", name='" + name + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", birthdate=" + birthdate +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
