@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import {ProfileComponent} from "./profile/profile.component";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatIconModule} from "@angular/material/icon";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import {ProfileComponent} from "./profile/profile.component";
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatChipsModule,
+    MatIconModule,
+    MatFormFieldModule
 
   ],
   providers: [],

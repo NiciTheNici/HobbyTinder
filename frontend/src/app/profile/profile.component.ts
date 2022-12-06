@@ -1,19 +1,49 @@
 import { Component } from '@angular/core';
-
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {MatChipInputEvent} from "@angular/material/chips";
+export interface Fruit {
+  name: string;
+}
 @Component({
   selector: 'app-profile',
   templateUrl: 'profile.component.html',
   styleUrls: ['profile.component.css']
 })
+
+
 export class ProfileComponent {
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
 
-  edit: boolean = false;
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  fruits: Fruit[] = [
+    {name: 'Lemon'},
+    {name: 'Lime'},
+    {name: 'Apple'},
+  ];
 
-  editProfile() {
-    this.edit = true;
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    // Add our fruit
+    if ((value || '').trim()) {
+      this.fruits.push({name: value.trim()});
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
   }
 
-  goBack() {
-    this.edit = false;
+  remove(fruit: Fruit): void {
+    const index = this.fruits.indexOf(fruit);
+
+    if (index >= 0) {
+      this.fruits.splice(index, 1);
+    }
   }
 }

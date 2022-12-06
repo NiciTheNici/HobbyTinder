@@ -54,8 +54,28 @@
                       <tr>
                         <th>hobbies</th>
                         <td>:</td>
-                        <td>climbing, painting, soccer</td>
+                        <td>
+                          <mat-chip-list #chipList>
+                            <mat-chip style="background-color:#e64553"*ngFor="let fruit of fruits" [selectable]="selectable"
+                                      [removable]="removable" (removed)="remove(fruit)">
+                              {{fruit.name}}
+                              <mat-icon matChipRemove *ngIf="removable">X</mat-icon>
+                            </mat-chip>
+
+                          </mat-chip-list>
+
+
+
+                        </td>
+                        <td>         <input placeholder="ADD HOBBY TEST"
+                                            [matChipInputFor]="chipList"
+                                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                            [matChipInputAddOnBlur]="addOnBlur"
+                                            (matChipInputTokenEnd)="add($event)"></td>
+
+
                       </tr>
+
                       <tr>
                         <th>more something</th>
                         <td>:</td>
